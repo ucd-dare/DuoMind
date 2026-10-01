@@ -63,7 +63,7 @@ def parse_args(argv):
         type=str,
         default="robopoly",
         choices=["robopoly", "robopoly-nightly"],
-        help="the name of this output wheel. Should be either 'robopoly' or 'robopoly_nightly'",
+        help="the package name: 'robopoly' or 'robopoly-nightly'",
     )
     return parser.parse_known_args(argv)
 
