@@ -23,9 +23,9 @@ import h5py
 import numpy as np
 import gymnasium as gym
 
-import mani_skill.envs  # noqa: F401
-from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
-from mani_skill.trajectory.utils import dict_to_list_of_dicts
+import robopoly.envs  # noqa: F401
+from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
+from robopoly.trajectory.utils import dict_to_list_of_dicts
 
 DEFAULT_ENV_ID = "TwoRobotBreadExchangeReplicaCAD-v1"
 CAMS = ["global_camera", "panda_wristcam-0-hand_camera", "panda_wristcam-1-hand_camera"]

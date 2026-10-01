@@ -1,5 +1,5 @@
 # Meshes are assets, not reviewable source-code diffs.
-mani_skill/assets/**/*.obj binary
-mani_skill/assets/**/*.stl binary
-mani_skill/assets/**/*.ply binary
-mani_skill/assets/**/*.dae binary
+robopoly/assets/**/*.obj binary
+robopoly/assets/**/*.stl binary
+robopoly/assets/**/*.ply binary
+robopoly/assets/**/*.dae binary

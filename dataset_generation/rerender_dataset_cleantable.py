@@ -19,10 +19,10 @@ import gymnasium as gym
 import h5py
 import numpy as np
 
-import mani_skill.envs  # noqa: F401
-import mani_skill.envs.tasks.tabletop.two_robot_clean_table as _ctmod
-from mani_skill.trajectory.utils import dict_to_list_of_dicts
-from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
+import robopoly.envs  # noqa: F401
+import robopoly.envs.tasks.tabletop.two_robot_clean_table as _ctmod
+from robopoly.trajectory.utils import dict_to_list_of_dicts
+from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
 
 CAMS = ["global_camera", "panda_wristcam-0-hand_camera", "panda_wristcam-1-hand_camera"]
 

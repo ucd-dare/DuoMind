@@ -1,4 +1,4 @@
-from mani_skill.envs.utils.observations import parse_obs_mode_to_struct
+from robopoly.envs.utils.observations import parse_obs_mode_to_struct
 
 
 def test_state():

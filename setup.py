@@ -57,13 +57,13 @@ def get_dependencies():
 
 
 def parse_args(argv):
-    parser = argparse.ArgumentParser(description="ManiSkill setup.py configuration")
+    parser = argparse.ArgumentParser(description="RoboPoly setup.py configuration")
     parser.add_argument(
         "--package_name",
         type=str,
-        default="mani_skill",
-        choices=["mani_skill", "mani_skill-nightly"],
-        help="the name of this output wheel. Should be either 'mani_skill' or 'mani_skill_nightly'",
+        default="robopoly",
+        choices=["robopoly", "robopoly-nightly"],
+        help="the name of this output wheel. Should be either 'robopoly' or 'robopoly_nightly'",
     )
     return parser.parse_known_args(argv)
 
@@ -72,7 +72,7 @@ def main(argv):
 
     args, unknown = parse_args(argv)
     name = args.package_name
-    is_nightly = name == "mani_skill-nightly"
+    is_nightly = name == "robopoly-nightly"
 
     this_directory = Path(__file__).parent
     long_description = (this_directory / "README.md").read_text(encoding="utf8")
@@ -90,16 +90,16 @@ def main(argv):
         description="RoboPoly: cooperative multi-robot manipulation built on ManiSkill",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        author="ManiSkill contributors",
-        url="https://github.com/haosulab/ManiSkill",
-        packages=find_packages(include=["mani_skill*"]),
+        author="RoboPoly and ManiSkill contributors",
+        url="https://github.com/ucd-dare/DuoMind",
+        license_files=["LICENSE", "licenses/LICENSE-*"],
+        packages=find_packages(include=["robopoly*"]),
         python_requires=">=3.9",
         setup_requires=["setuptools>=62.3.0"],
         install_requires=get_dependencies(),
         # Glob patterns do not automatically match dotfiles
         package_data={
-            "mani_skill": ["assets/**", "envs/**/*", "utils/**/*"],
-            "warp_maniskill.warp": ["native/*", "native/nanovdb/*"],
+            "robopoly": ["assets/**", "envs/**/*", "utils/**/*"],
         },
         extras_require={
             "dev": [

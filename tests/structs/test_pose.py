@@ -4,7 +4,7 @@ import sapien
 import torch
 from transforms3d.euler import euler2quat
 
-from mani_skill.utils.structs.pose import Pose
+from robopoly.utils.structs.pose import Pose
 
 
 def test_pose_creation():

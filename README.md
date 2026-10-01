@@ -3,21 +3,19 @@
 <p align="center">
   <img src="docs/paper.svg" alt="Paper">
   <a href="https://hanchuzhou.github.io/duomind_project_page/"><img src="docs/project-page.svg" alt="Project Page"></a>
-  <img src="docs/dataset.svg" alt="Dataset">
+  <a href="https://huggingface.co/datasets/ucd-dare/multi-agent-demo/tree/main"><img src="docs/dataset.svg" alt="Dataset"></a>
 </p>
 
 <p align="center">
   <img src="docs/overview.png" alt="DuoMind overview" width="100%">
 </p>
 
-RoboPoly is a benchmark comprising long-horizon manipulation tasks that require
-coordinated, closed-loop execution under distributed control. It contains seven multi-robot tasks: `hang_bag`, `food_serve`, `prepare_snack`, `clean_table`, `cook_pot`,
+DuoMind is a distributed hierarchical framework for multi-robot coordination through semantic communication.
+
+ We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control. It contains seven multi-robot tasks: `hang_bag`, `food_serve`, `prepare_snack`, `clean_table`, `cook_pot`,
 `put_object_cabinet`, and `exchange_bread`.
 
-<div style="color: #e67e22; border-left: 4px solid #e67e22; padding-left: 12px;">
-  <p><strong>DuoMind code is coming soon.</strong></p>
-  <p><strong>The RoboPoly dataset will be released in a few days.</strong></p>
-</div>
+![DuoMind code is coming soon. The RoboPoly dataset will be released in a few days.](docs/news.svg)
 
 ## Installation
 
@@ -31,10 +29,13 @@ uv pip install -r script/requirements_robopoly.txt
 uv pip install --no-deps -e .
 
 export MS_ASSET_DIR="$PWD/.cache/robopoly"
-python -m mani_skill.utils.download_asset ReplicaCAD
-python -m mani_skill.utils.download_asset RoboCasa
+python -m robopoly.utils.download_asset ReplicaCAD
+python -m robopoly.utils.download_asset RoboCasa
 ```
 
+The Python package is `robopoly`. After updating an existing checkout, rerun
+`uv pip install --no-deps -e .` and change imports in your own code from
+`mani_skill` to `robopoly`. Existing `MS_ASSET_DIR` settings remain supported.
 
 ## Dataset
 
@@ -53,7 +54,8 @@ python dataset_generation/generate_dataset_unified.py \
 Change `TASK` and `DEMOS` to select the task and dataset size. Use a new output
 directory for each run. The generator saves successful expert trajectories
 (states and actions) and per-robot instruction metadata. Add `--save-video` for
-preview videos; see [RGB rendering](generate_dataset.md) to add camera observations.
+preview videos; use the task-specific `rerender_dataset*.py` scripts in
+[dataset_generation/](dataset_generation/) to add camera observations.
 
 ## Register your algorithm
 
@@ -98,6 +100,15 @@ seed, and `--videos 0` to disable recording.
 Metrics and videos are saved under
 `eval_result/robopoly/<environment>/custom/<experiment>/`.
 
+## Development
+
+Install the optional Git hooks from the repository root:
+
+```bash
+uv pip install pre-commit
+pre-commit install --config .github/pre-commit-config.yaml
+```
+
 ## Citation
 
 Citation template (publication details to be added):
@@ -117,3 +128,6 @@ Citation template (publication details to be added):
 The DuoMind codebase is developed based on RoboTwin 2.0, and RoboPoly is built on
 ManiSkill 3. We thank Keyu Zhu and Vivian Xie for their contributions to building
 RoboPoly.
+
+See [LICENSE](LICENSE) and the
+[RoboTwin MIT license](licenses/LICENSE-EMBODIED-MA) for licensing details.

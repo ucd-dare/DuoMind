@@ -11,3 +11,5 @@ dist/
 /eval_result/
 *.log
 *.coacd.ply
+.vscode/
+.DS_Store

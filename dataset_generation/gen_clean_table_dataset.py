@@ -31,10 +31,10 @@ import gymnasium as gym
 import numpy as np
 from tqdm import tqdm
 
-import mani_skill.envs  # noqa: F401
-from mani_skill.examples.motionplanning.two_robot.solutions import solveTwoRobotCleanTable
-from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
-from mani_skill.utils.wrappers.record import RecordEpisode
+import robopoly.envs  # noqa: F401
+from robopoly.examples.motionplanning.two_robot.solutions import solveTwoRobotCleanTable
+from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
+from robopoly.utils.wrappers.record import RecordEpisode
 
 KEEP_CAMERAS = (
     "global_camera",

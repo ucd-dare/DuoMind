@@ -5,7 +5,7 @@ deterministic and reproduces the verified success -- unlike action replay) and
 captures the 3 observation cameras, writing a new h5 with per-step images, actions,
 env_states, and the per-arm subgoal instructions.
 
-(We use this instead of `mani_skill.trajectory.replay_trajectory --use-env-states`
+(We use this instead of `robopoly.trajectory.replay_trajectory --use-env-states`
 because that path errors on the ReplicaCAD background actor names for this env.)
 
 Usage:
@@ -21,10 +21,10 @@ import gymnasium as gym
 import contextlib
 import io
 
-import mani_skill.envs  # noqa: F401
-import mani_skill.envs.tasks.tabletop.two_robot_food_serve as _fsmod
-from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
-from mani_skill.trajectory.utils import dict_to_list_of_dicts
+import robopoly.envs  # noqa: F401
+import robopoly.envs.tasks.tabletop.two_robot_food_serve as _fsmod
+from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
+from robopoly.trajectory.utils import dict_to_list_of_dicts
 
 ENV_ID = "TwoRobotFoodServeReplicaCAD-v1"
 CAMS = ["global_camera", "panda_wristcam-0-hand_camera", "panda_wristcam-1-hand_camera"]

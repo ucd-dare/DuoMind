@@ -108,15 +108,15 @@ def _agent_state_from_obs(observation: dict, agent_id: int) -> np.ndarray:
 
 def _make_env(args: argparse.Namespace, env_id: str):
     import gymnasium as gym
-    import mani_skill.envs  # noqa: F401
+    import robopoly.envs  # noqa: F401
     import sapien.physx as physx
-    from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
+    from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
 
     if args.task == "clean_table":
         # The legacy visualization camera remains available on the task class,
         # but evaluation renders only the new global training view. The two
         # wrist cameras are robot-mounted and remain available automatically.
-        import mani_skill.envs.tasks.tabletop.two_robot_clean_table as clean_table_module
+        import robopoly.envs.tasks.tabletop.two_robot_clean_table as clean_table_module
 
         clean_table_cls = clean_table_module.TwoRobotCleanTableReplicaCADEnv
         all_sensor_configs = clean_table_cls._default_sensor_configs.fget

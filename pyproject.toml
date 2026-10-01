@@ -9,3 +9,8 @@ markers = [
     "gpu_sim: marks tests as using the GPU simulation (deselect with '-m \"not gpu_sim\"')",
     "serial",
 ]
+
+[tool.pyright]
+exclude = ["**/__pycache__", "robopoly/assets"]
+reportUnnecessaryTypeIgnoreComment = true
+typeCheckingMode = "basic"

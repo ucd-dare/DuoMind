@@ -1,5 +1,5 @@
 """Merge per-shard instruction sidecars into one, matching the traj-id numbering
-that ``mani_skill.trajectory.merge_trajectory`` produces.
+that ``robopoly.trajectory.merge_trajectory`` produces.
 
 ``merge_trajectory`` globs ``sorted(input_dir.rglob(pattern))`` and re-numbers
 every episode sequentially as ``traj_0, traj_1, ...`` in that order. This mirrors

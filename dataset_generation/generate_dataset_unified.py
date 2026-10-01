@@ -27,7 +27,7 @@ step boundaries) *and* the constant high-level instruction to a sidecar JSON:
 
 This writes a STATE-only ``.h5`` (actions + env_states, fast, no images). Add the
 3-camera RGB observations afterwards with the task's rerender step (or the generic
-``mani_skill.trajectory.replay_trajectory --use-env-states --obs-mode rgb``).
+``robopoly.trajectory.replay_trajectory --use-env-states --obs-mode rgb``).
 
 Usage:
   python dataset_generation/generate_dataset_unified.py --task food_serve -n 50
@@ -54,7 +54,7 @@ from tqdm import tqdm
 
 torch.set_num_threads(1)
 
-from mani_skill.examples.motionplanning.two_robot.solutions import (
+from robopoly.examples.motionplanning.two_robot.solutions import (
     solveTwoRobotFoodServe,
     solveTwoRobotHangBag,
     solveTwoRobotBreadExchange,
@@ -63,19 +63,19 @@ from mani_skill.examples.motionplanning.two_robot.solutions import (
     solveTwoRobotPrepareSnack,
     solveTwoRobotPutObjectCabinet,
 )
-from mani_skill.examples.motionplanning.two_robot.solutions.bread_exchange import (
+from robopoly.examples.motionplanning.two_robot.solutions.bread_exchange import (
     breads_face_up,
     left_second_pick_wrist_motion as bread_left_second_pick_wrist_motion,
 )
-from mani_skill.examples.motionplanning.two_robot.solutions.clean_table import (
+from robopoly.examples.motionplanning.two_robot.solutions.clean_table import (
     cube_operation_max_wrist_path,
     cube_operation_max_wrist_net_rotation,
     grasp_approach_max_joint_winding,
     left_place_counterclockwise_wrist_path,
     wrist_grab_max_path,
 )
-from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
-from mani_skill.utils.wrappers.record import RecordEpisode
+from robopoly.utils.wrappers.flatten import FlattenActionSpaceWrapper
+from robopoly.utils.wrappers.record import RecordEpisode
 
 
 # --------------------------------------------------------------------------- #

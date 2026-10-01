@@ -9,8 +9,8 @@ import pytest
 from policy.custom import load_policy
 from policy.custom.my_policy import MyPolicy
 from script.eval_robopoly_custom import TASK_NAMES, TASKS, run_episode
-import mani_skill.envs
-from mani_skill.utils.registration import REGISTERED_ENVS
+import robopoly.envs
+from robopoly.utils.registration import REGISTERED_ENVS
 
 
 def test_only_benchmark_tasks_are_registered():
