@@ -1,0 +1,15 @@
+{
+    "contact_points": [
+        {
+            "id": 0,
+            "description": "On one side handle of the kitchen pot.",
+            "usage": "Used to hold or grip the kitchen pot."
+        },
+        {
+            "id": 1,
+            "description": "On the other side handle of the kitchen pot.",
+            "usage": "Used to hold or grip the kitchen pot."
+        }
+    ],
+    "functional_points": []
+}

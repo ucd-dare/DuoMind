@@ -1,0 +1,27 @@
+# Benchmark-only runtime; keep simulator versions aligned with the reference evaluator.
+numpy==1.26.4
+torch==2.6.0
+sapien==3.0.0b1
+mplib==0.2.1
+gymnasium==0.29.1
+scipy
+dacite
+h5py
+PyYAML
+tqdm
+GitPython
+tabulate
+transforms3d
+trimesh
+imageio
+imageio-ffmpeg
+Pillow
+opencv-python-headless==4.11.0.86
+pytorch-kinematics==0.7.6
+defusedxml
+nvidia-ml-py
+IPython
+tyro>=0.8.5
+huggingface_hub
+setuptools==69.5.1
+coacd==1.0.13

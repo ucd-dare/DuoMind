@@ -1,0 +1,7 @@
+from .two_robot_clean_table import TwoRobotCleanTableReplicaCADEnv
+from .two_robot_cook_pot import TwoRobotCookPotReplicaCADEnv
+from .two_robot_bread_exchange import TwoRobotBreadExchangeReplicaCADEnv
+from .two_robot_food_serve import TwoRobotFoodServeReplicaCADEnv
+from .two_robot_hang_bag import TwoRobotHangBagReplicaCADEnv
+from .two_robot_prepare_snack import TwoRobotPrepareSnackReplicaCADEnv
+from .two_robot_put_object_cabinet import TwoRobotPutObjectCabinetReplicaCADEnv
