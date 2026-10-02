@@ -1,26 +1,30 @@
 <h1 align="center">DuoMind: Enabling Multi-Robot Coordination via Communication</h1>
 
 <p align="center">
-  <img src="docs/paper.svg" alt="Paper">
+  <a href="https://arxiv.org/pdf/2610.02161"><img src="docs/paper.svg" alt="Paper"></a>
   <a href="https://hanchuzhou.github.io/duomind_project_page/"><img src="docs/project-page.svg" alt="Project Page"></a>
   <a href="https://huggingface.co/datasets/ucd-dare/multi-agent-demo/tree/main"><img src="docs/dataset.svg" alt="Dataset"></a>
+</p>
+
+<p align="center">
+  <a href="https://hanchuzhou.github.io/duomind_project_page/" title="Watch the full DuoMind and RoboPoly overview video">
+    <img src="docs/duomind-overview.gif" alt="DuoMind: Hierarchical Multi-Robot Coordination Framework. RoboPoly: Multi-Robot Benchmark. Animated overview; click to watch on the project page." width="100%">
+  </a>
 </p>
 
 <p align="center">
   <img src="docs/overview.png" alt="DuoMind overview" width="100%">
 </p>
 
-DuoMind is a distributed hierarchical framework for multi-robot coordination through semantic communication.
+DuoMind is a distributed hierarchical framework for multi-robot coordination through semantic communication. We enable multi-robot collaboration to unlock their capability on complex tasks.
 
- We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control. It contains seven multi-robot tasks: `hang_bag`, `food_serve`, `prepare_snack`, `clean_table`, `cook_pot`,
-`put_object_cabinet`, and `exchange_bread`.
+ We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control.
 
 ![DuoMind code is coming soon. The RoboPoly dataset will be released in a few days.](docs/news.svg)
 
 ## Installation
 
-Use Linux, Python 3.11, an NVIDIA GPU with a CUDA-compatible driver, Vulkan, and `uv`.
-Run the commands from the **repository root**:
+To install the environment and download 3D assets, run the commands from the repository root:
 
 ```bash
 uv venv --python 3.11 .venv-robopoly
@@ -33,14 +37,12 @@ python -m robopoly.utils.download_asset ReplicaCAD
 python -m robopoly.utils.download_asset RoboCasa
 ```
 
-The Python package is `robopoly`. After updating an existing checkout, rerun
-`uv pip install --no-deps -e .` and change imports in your own code from
-`mani_skill` to `robopoly`. Existing `MS_ASSET_DIR` settings remain supported.
-
 ## Dataset
 
-We provide expert demonstrations for all seven tasks in the
+RoboPoly contains seven multi-robot tasks: `hang_bag`, `food_serve`, `prepare_snack`, `clean_table`, `cook_pot`,
+`put_object_cabinet`, and `exchange_bread`. We provide 50 expert demonstrations for each of the tasks in the
 [expert demonstration dataset](https://huggingface.co/datasets/ucd-dare/multi-agent-demo).
+
 To generate more data with our planning-based pipeline:
 
 ```bash
@@ -75,15 +77,7 @@ seven absolute joint targets in radians and a normalized gripper command
 
 ## Evaluation
 
-To check installation with the included empty policy (no checkpoint required):
-
-```bash
-python script/benchmark.py eval robopoly clean_table \
-  --mode custom --custom-policy policy.custom.example:example \
-  --gpus 0 --episodes 1 --videos 1 --max-episode-steps 2
-```
-
-After implementing model loading in the template, evaluate your policy:
+After registering policy in the template, evaluate your policy:
 
 ```bash
 python script/benchmark.py eval robopoly clean_table \
@@ -92,22 +86,13 @@ python script/benchmark.py eval robopoly clean_table \
 ```
 
 Replace `clean_table` with any task above. Use `--policy-config config.json` for
-model settings (for example, `{"checkpoint": "/path/to/checkpoint"}`), and
+model settings, and
 `--experiment exp_name` to customize the run name.
-Use `--episodes 400` for full evaluation, `--seed SEED` to change the starting
-seed, and `--videos 0` to disable recording.
+Use `--episodes 400` to control rollout episodes, `--seed SEED` to change the starting seed, and `--videos 5` to generate certain numbers of visualization videos.
 
 Metrics and videos are saved under
 `eval_result/robopoly/<environment>/custom/<experiment>/`.
 
-## Development
-
-Install the optional Git hooks from the repository root:
-
-```bash
-uv pip install pre-commit
-pre-commit install --config .github/pre-commit-config.yaml
-```
 
 ## Citation
 
@@ -125,9 +110,6 @@ Citation template (publication details to be added):
 
 ## Acknowledgments
 
-The DuoMind codebase is developed based on RoboTwin 2.0, and RoboPoly is built on
-ManiSkill 3. We thank Keyu Zhu and Vivian Xie for their contributions to building
+The DuoMind codebase is developed based on RoboTwin 2.0, and RoboPoly is built on ManiSkill 3. We thank Keyu Zhu and Vivian Xie for their contributions to building
 RoboPoly.
 
-See [LICENSE](LICENSE) and the
-[RoboTwin MIT license](licenses/LICENSE-EMBODIED-MA) for licensing details.
