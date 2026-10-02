@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://arxiv.org/pdf/2610.02161"><img src="docs/paper.svg" alt="Paper"></a>
   <a href="https://hanchuzhou.github.io/duomind_project_page/"><img src="docs/project-page.svg" alt="Project Page"></a>
-  <a href="https://huggingface.co/datasets/ucd-dare/multi-agent-demo/tree/main"><img src="docs/dataset.svg" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/ucd-dare/robopoly_demo/tree/main"><img src="docs/dataset.svg" alt="Dataset"></a>
 </p>
 
 <p align="center">
@@ -112,4 +112,3 @@ Citation template (publication details to be added):
 
 The DuoMind codebase is developed based on RoboTwin 2.0, and RoboPoly is built on ManiSkill 3. We thank Keyu Zhu and Vivian Xie for their contributions to building
 RoboPoly.
-
