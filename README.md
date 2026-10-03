@@ -96,15 +96,13 @@ Metrics and videos are saved under
 
 ## Citation
 
-Citation template (publication details to be added):
+If you use DuoMind, please cite:
 
 ```bibtex
-@misc{duomind,
-  title = {DuoMind: Enabling Multi-Robot Coordination via Communication},
-  author = {TODO},
-  year = {TODO},
-  howpublished = {TODO},
-  url = {TODO}
+@misc{zhou_duomind,
+  title = {{DuoMind}: Enabling Distributed Multi-Robot Coordination with Semantic Communication},
+  author = {Zhou, Hanchu and Gao, Dechen and Wang, Hang and Lynch, Brendan and Zhao, Boqi and Ma, Qiyao and Goyal, Raman and Zhang, Junshan},
+  url = {https://arxiv.org/abs/2610.02161}
 }
 ```
 
