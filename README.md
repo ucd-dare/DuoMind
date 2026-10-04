@@ -20,7 +20,7 @@ DuoMind is a distributed hierarchical framework for multi-robot coordination thr
 
  We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control.
 
-![DuoMind code is coming soon. The RoboPoly dataset will be released in a few days.](docs/news.svg)
+![DuoMind code is coming soon.](docs/news.svg)
 
 ## Installation
 
