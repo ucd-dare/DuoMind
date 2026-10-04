@@ -18,9 +18,9 @@
 
 DuoMind is a distributed hierarchical framework for multi-robot coordination through semantic communication. We enable multi-robot collaboration to unlock their capability on complex tasks.
 
- We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control.
-
 ![DuoMind code is coming soon.](docs/news.svg)
+
+ We also introduce RoboPoly, a multi-robot benchmark comprising long-horizon manipulation tasks that require coordinated execution under distributed control.
 
 ## Installation
 
@@ -41,7 +41,7 @@ python -m robopoly.utils.download_asset RoboCasa
 
 RoboPoly contains seven multi-robot tasks: `hang_bag`, `food_serve`, `prepare_snack`, `clean_table`, `cook_pot`,
 `put_object_cabinet`, and `exchange_bread`. We provide 50 expert demonstrations for each of the tasks in the
-[expert demonstration dataset](https://huggingface.co/datasets/ucd-dare/multi-agent-demo).
+[expert demonstration dataset](https://huggingface.co/datasets/ucd-dare/docs/news.svg)multi-agent-demo).
 
 To generate more data with our planning-based pipeline:
 

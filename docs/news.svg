@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="570" height="76" viewBox="0 0 570 76" role="img" aria-labelledby="title">
-  <title id="title">DuoMind code is coming soon. The RoboPoly dataset will be released in a few days.</title>
-  <rect width="4" height="76" rx="2" fill="#e67e22"/>
-  <g fill="#e67e22" font-family="Arial, sans-serif" font-size="16" font-weight="700">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="38" viewBox="0 0 300 38" role="img" aria-labelledby="title">
+  <title id="title">DuoMind code is coming soon.</title>
+  <rect width="4" height="38" rx="2" fill="#0969da"/>
+  <g fill="#0969da" font-family="Arial, sans-serif" font-size="16" font-weight="700">
     <text x="16" y="27">DuoMind code is coming soon.</text>
-    <text x="16" y="57">The RoboPoly dataset will be released in a few days.</text>
   </g>
 </svg>
