@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from script.robopoly_runtime import TASKS
+from script.robopoly_runtime import EPISODE_STEP_LIMITS, TASKS
 
 
 def main():
@@ -23,13 +23,16 @@ def main():
     parser.add_argument('--episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=100000)
     parser.add_argument('--videos', type=int, default=2)
-    parser.add_argument('--max-episode-steps', type=int, default=1500)
+    parser.add_argument('--max-episode-steps', type=int, help="Override the task's evaluation step limit")
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
+    if args.max_episode_steps is not None and args.max_episode_steps < 1:
+        parser.error('--max-episode-steps must be positive')
+    max_episode_steps = args.max_episode_steps or EPISODE_STEP_LIMITS[args.task]
     command = [sys.executable, str(ROOT / 'script/eval_robopoly_custom.py'), '--task', args.task,
                '--custom-policy', args.custom_policy, '--episodes', str(args.episodes),
                '--seed', str(args.seed), '--videos', str(args.videos),
-               '--max-episode-steps', str(args.max_episode_steps)]
+               '--max-episode-steps', str(max_episode_steps)]
     if args.policy_config:
         command += ['--policy-config', str(args.policy_config.resolve())]
     if args.experiment:

@@ -90,6 +90,8 @@ model settings, and
 `--experiment exp_name` to customize the run name.
 Use `--episodes 400` to control rollout episodes, `--seed SEED` to change the starting seed, and `--videos 5` to generate certain numbers of visualization videos.
 
+RoboPoly evaluation uses task-specific step limits. Clean Table and Exchange Bread default to 2,500 steps. Use `--max-episode-steps STEPS` to override the task default.
+
 Metrics and videos are saved under
 `eval_result/robopoly/<environment>/custom/<experiment>/`.
 

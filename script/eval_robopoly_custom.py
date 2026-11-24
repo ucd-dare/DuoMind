@@ -15,6 +15,7 @@ from policy.custom import load_policy
 from policy.video_instructions import add_instruction_panel
 # Simulator helpers do not import OpenPI, Transformers, or a planner.
 from script.robopoly_runtime import TASKS, _make_env, _success, _to_numpy, _video_frame, _agent_state_from_obs, _rgb_from_obs, _policy_image, GLOBAL_CAMERA, WRIST_CAMERAS
+from script.robopoly_runtime import EPISODE_STEP_LIMITS
 
 TASK_NAMES = tuple(TASKS)
 
@@ -97,9 +98,11 @@ def main():
     parser.add_argument('--episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=100000)
     parser.add_argument('--videos', type=int, default=2)
-    parser.add_argument('--max-episode-steps', type=int, default=1500)
+    parser.add_argument('--max-episode-steps', type=int, help="Override the task's evaluation step limit")
     parser.add_argument('--result-dir', type=Path, default=ROOT / 'eval_result/robopoly')
     args = parser.parse_args()
+    if args.max_episode_steps is None:
+        args.max_episode_steps = EPISODE_STEP_LIMITS[args.task]
     if args.episodes < 1 or args.videos < 0 or args.max_episode_steps < 1:
         parser.error('Episode/step counts must be positive and videos nonnegative')
     # Identical simulator/control defaults to the reference evaluator, without

@@ -26,6 +26,18 @@ TASKS = {'clean_table': {'env_id': 'TwoRobotCleanTableReplicaCAD-v1',
                         'high_level_instruction': 'Open the drawer and put the cube inside. Then '
                                                   'close the drawer.'}}
 
+# Mirrored from the reference RoboPoly task presets for standalone releases,
+# which do not include the DuoMind policy configs.
+EPISODE_STEP_LIMITS = {
+    "clean_table": 2500,
+    "cook_pot": 2000,
+    "food_serve": 1500,
+    "hang_bag": 1500,
+    "exchange_bread": 2500,
+    "prepare_snack": 2000,
+    "put_object_cabinet": 2000,
+}
+
 GLOBAL_CAMERA = "global_camera"
 
 WRIST_CAMERAS = {
